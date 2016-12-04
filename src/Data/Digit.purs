@@ -6,11 +6,13 @@ module Data.Digit
   ) where
 
 import Prelude
-import Data.Maybe (Maybe(..))
 import Data.Char (toCharCode, fromCharCode)
+import Data.Generic (class Generic)
+import Data.Maybe (Maybe(..))
 
 newtype Digit = Digit Int
 
+derive instance genericDigit :: Generic Digit
 instance showDigit :: Show Digit where
   show (Digit n) = "Digit " <> show n
 
