@@ -25,8 +25,9 @@ import Prelude
 
 import Data.Digit (Digit, toInt, fromInt, fromChar, toChar, _zero, _one)
 import Data.Foldable (foldl, all, foldMap)
-import Data.Int (odd)
-import Data.Int (round) as Int
+import Data.Foreign (readNumber)
+import Data.Foreign.Class (class AsForeign, class IsForeign, write)
+import Data.Int (odd, round) as Int
 import Data.List (List(..), (:))
 import Data.List as L
 import Data.Maybe (Maybe(..), fromJust)
@@ -72,6 +73,14 @@ timesSign :: Sign -> Sign -> Sign
 timesSign Plus Plus = Plus
 timesSign Minus Minus = Plus
 timesSign _ _ = Minus
+
+instance isForeignHugeNum :: IsForeign HugeNum where
+  read f = do
+    n <- readNumber f
+    pure (fromNumber n)
+
+instance asForeignHugeNum :: AsForeign HugeNum where
+  write v = write (toNumber v)
 
 instance showHugeNum :: Show HugeNum where
   show = append "HugeNum " <<< toString -- <<< dropZeroes
@@ -584,7 +593,7 @@ pow r 1 = r
 pow r n =
   let c = r * r
       ans = pow c (n / 2)
-   in if odd n
+   in if Int.odd n
          then r * ans
          else ans
 

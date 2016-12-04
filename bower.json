@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "purescript-arrays": "^3.0.0",
+    "purescript-foreign": "^3.0.1",
     "purescript-globals": "^2.0.0",
     "purescript-integers": "^2.0.0",
     "purescript-quickcheck": "^3.0.0",
