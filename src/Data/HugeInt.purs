@@ -28,7 +28,7 @@ import Data.HugeNum as HN
 
 newtype HugeInt = HugeInt HugeNum
 
-derive newtype instance genericHugeInt :: Generic HugeInt
+derive instance genericHugeInt :: Generic HugeInt
 
 instance eqHugeInt :: Eq HugeInt where
   eq (HugeInt h1) (HugeInt h2) = h1 == h2
