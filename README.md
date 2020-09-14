@@ -18,7 +18,38 @@ spago install precise
 
 ## Quick start
 
-The quick start hasn't been written yet (contributions are welcome!). The quick start covers a common, minimal use case for the library, whereas longer examples and tutorials are kept in the [docs directory](./docs.)
+JavaScript (and to some extension PureScript) has quite a few drawbacks when it comes to large numbers. For example, PureScript's `Int` primitive [is a member](https://github.com/purescript/purescript-prelude/blob/v0.1.3/src/Prelude.js#L177-L178) of the `Bounded` typeclass, with `top == 2 ^ 31 - 1` and `bottom == - (2 ^ 32)`.
+
+The PureScript `Number` primitive is not `Bounded` in the same way; however, there are problems with manipulating large-enough `Number`s:
+
+```
+> import Prelude
+> let x = 900000000000000000.0
+> :t x
+Number
+
+> x + 1.0 == x
+true
+> x + 1.0
+900000000000000000
+```
+
+In this library, correctness is prioritized above all else:
+
+```
+> import Data.HugeNum
+> let x = fromNumber 900000000000000000.0
+> let y = fromNumber 1.0
+> x + y == x
+false
+
+> x + y
+HugeNum 900000000000000001.0
+```
+
+Addition is implemented using an elementary-school method. Multiplication follows [Karatsuba](https://en.wikipedia.org/wiki/Karatsuba_algorithm).
+
+The quick start covers a common, minimal use case for the library, whereas longer examples and tutorials are kept in the [docs directory](./docs.)
 
 ## Documentation
 
