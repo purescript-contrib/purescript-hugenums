@@ -49,8 +49,6 @@ HugeNum 900000000000000001.0
 
 Addition is implemented using an elementary-school method. Multiplication follows [Karatsuba](https://en.wikipedia.org/wiki/Karatsuba_algorithm).
 
-The quick start covers a common, minimal use case for the library, whereas longer examples and tutorials are kept in the [docs directory](./docs.)
-
 ## Documentation
 
 `precise` documentation is stored in a few places:
