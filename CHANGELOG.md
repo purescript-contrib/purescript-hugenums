@@ -12,14 +12,6 @@ Bugfixes:
 
 Other improvements:
 
-## [0.1.0] - 2020-09-21
-This release adds tests for `HugeInt`.
-
-Breaking changes (😱!!!):
-
-New features:
-
-Bugfixes:
-
-Other improvements:
 - Tests: add tests for `HugeInt` ([#18](https://github.com/purescript-contrib/purescript-precise/issues/18))
+
+## [0.0.0] - 2020-01-01
