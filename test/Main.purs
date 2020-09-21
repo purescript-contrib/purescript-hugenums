@@ -43,7 +43,6 @@ instance arbitraryArbHugeInt :: Arbitrary ArbHugeInt where
 prxHugeInt :: Proxy ArbHugeInt
 prxHugeInt = Proxy
 
-
 main :: Effect Unit
 main = do
   log "Checking HugeNum instances...\n"
