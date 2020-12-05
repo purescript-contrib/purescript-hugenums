@@ -6,7 +6,7 @@
   , "exceptions"
   , "gen"
   , "generics-rep"
-  , "globals"
+  , "numbers"
   , "integers"
   , "lists"
   , "psci-support"
