@@ -1,5 +1,5 @@
 module Data.Digit
-  ( Digit()
+  ( Digit
   , fromInt , toInt
   , fromChar , toChar
   , _zero, _one, _two, _three, _four, _five, _six, _seven, _eight, _nine
@@ -7,13 +7,10 @@ module Data.Digit
 
 import Prelude
 import Data.Char (toCharCode, fromCharCode)
-import Data.Generic.Rep (class Generic)
 import Data.Maybe (Maybe(..), fromJust)
 import Partial.Unsafe (unsafePartial)
 
 newtype Digit = Digit Int
-
-derive instance genericDigit :: Generic Digit _
 
 instance showDigit :: Show Digit where
   show (Digit n) = "Digit " <> show n
