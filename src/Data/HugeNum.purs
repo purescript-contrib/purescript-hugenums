@@ -29,13 +29,13 @@ import Data.Generic.Rep (class Generic)
 import Data.Int (odd, round) as Int
 import Data.List (List(..), (:))
 import Data.Maybe (Maybe(..), fromJust)
+import Data.Number as Number
 import Data.String (Pattern(..), contains)
 import Data.String.CodeUnits (singleton, toCharArray)
 import Data.Traversable (sequence)
 import Data.Tuple (Tuple(..), fst, snd)
 import Data.Unfoldable (replicate)
 import Effect.Exception.Unsafe (unsafeThrow)
-import Global (readFloat)
 import Partial.Unsafe (unsafePartial)
 
 -- | ##Type definitions
@@ -52,7 +52,6 @@ newtype HugeNum = HugeNum { digits :: List Digit, decimal :: Int, sign :: Sign }
 -- | ##Instances
 
 derive instance genericSign :: Generic Sign _
-derive instance genericHugeNum :: Generic HugeNum _
 
 instance eqSign :: Eq Sign where
   eq Plus Plus = true
@@ -165,7 +164,7 @@ lessPrecise (HugeNum r1) (HugeNum r2) =
 -- | Creates a HugeNum from a Number.
 -- | May lose precision if the argument is too large.
 toNumber :: HugeNum -> Number
-toNumber = readFloat <<< toString
+toNumber n = unsafePartial $ fromJust $ Number.fromString $ toString n
 
 toString :: HugeNum -> String
 toString (HugeNum r) =
@@ -251,7 +250,7 @@ parseScientific n = z where
   expSign = case signSplit.head of
                  '+' -> Plus
                  _ -> Minus
-  exponent = Int.round $ readFloat $ foldMap singleton $ signSplit.tail
+  exponent = Int.round $ unsafePartial $ fromJust $ Number.fromString $ foldMap singleton signSplit.tail
   z = { exponent, expSign, base, sign }
 
 parsePlusPlus :: Int -> List Char -> HugeRec
