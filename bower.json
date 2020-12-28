@@ -15,9 +15,9 @@
     "purescript-arrays": "master",
     "purescript-exceptions": "master",
     "purescript-gen": "master",
-    "purescript-globals": "master",
     "purescript-integers": "master",
     "purescript-lists": "master",
+    "purescript-numbers": "master",
     "purescript-prelude": "master",
     "purescript-strings": "master"
   },
