@@ -5,14 +5,46 @@ Notable changes to this project are documented in this file. The format is based
 ## [Unreleased]
 
 Breaking changes (😱!!!):
+- Added support for PureScript 0.14 and dropped support for all previous versions (#21 by @JordanMartinez, #22 by @kl0tl)
 
 New features:
 
 Bugfixes:
-- Fixed comparing negative `HugeNum` values and `HugeInt.toInt` returning `Nothing` for negative values ([#10](https://github.com/purescript-contrib/purescript-precise/issues/10))
+- Fixed comparing negative `HugeNum` values and `HugeInt.toInt` returning `Nothing` for negative values (#20 by @vladciobanu)
 
 Other improvements:
+- Added tests for `HugeInt` (#19 by @cmdv)
+- Changed default branch to `main` from `master`
+- Updated to comply with Contributors library guidelines by adding new issue and pull request templates, updating documentation, and migrating to Spago for local development and CI (#17 by @JordanMartinez)
 
-- Tests: add tests for `HugeInt` ([#18](https://github.com/purescript-contrib/purescript-precise/issues/18))
+## [v4.0.0](https://github.com/purescript-contrib/purescript-precise/releases/tag/v4.0.0) - 2019-03-03
 
-## [0.0.0] - 2020-01-01
+- Removed `quickcheck` as a hard dependency
+- Added `MonadGen`-based generator for `HugeNum`
+
+## [v3.0.1](https://github.com/purescript-contrib/purescript-precise/releases/tag/v3.0.1) - 2018-06-27
+
+- Updated `bower.json` file to correctly list the repository URL as `purescript-contrib/purescript-precise`
+
+## [v3.0.0](https://github.com/purescript-contrib/purescript-precise/releases/tag/v3.0.0) - 2018-06-27
+
+- Updated for PureScript 0.12 (@paulyoung)
+- Updated issue, pull request, and contribution templates
+
+## [v2.0.0](https://github.com/purescript-contrib/purescript-precise/releases/tag/v2.0.0) - 2017-04-27
+
+- Updated for PureScript 0.11
+
+## [v1.1.0](https://github.com/purescript-contrib/purescript-precise/releases/tag/v1.1.0) - 2017-02-17
+
+- Added `Generic` instance for `HugeInt`
+
+## [v1.0.1](https://github.com/purescript-contrib/purescript-precise/releases/tag/v1.0.1) - 2017-02-17
+
+- Added `Generic` instances (@chexxor)
+- Fixed addition of non-integer numbers (@garyb)
+- Fixed multiplication of non-integer numbers (@chexxor)
+
+## [v1.0.0](https://github.com/purescript-contrib/purescript-precise/releases/tag/v1.0.0) - 2016-11-08
+
+- Initial release of of `purescript-hugenums`, compatible with PureScript 0.10
