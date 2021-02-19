@@ -25,6 +25,6 @@
   },
   "devDependencies": {
     "purescript-quickcheck": "^7.0.0",
-    "purescript-quickcheck-laws": null
+    "purescript-quickcheck-laws": "^5.0.1"
   }
 }
