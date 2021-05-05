@@ -17,6 +17,7 @@ module Data.HugeNum
   , ceil
   , round
   , googol
+  , subHugeNum
   , pow, (^)
   , truncate
   ) where

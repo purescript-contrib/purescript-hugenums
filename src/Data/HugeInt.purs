@@ -5,6 +5,8 @@ module Data.HugeInt
   , toInt
   , toHugeNum
   , fromHugeNum
+  , abs
+  , neg
   , round
   , ceil
   , floor
