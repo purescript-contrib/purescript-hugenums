@@ -7,10 +7,12 @@ Notable changes to this project are documented in this file. The format is based
 Breaking changes:
 
 New features:
+- Export `HugeInt`'s `abs` and `neg` and `HugeNum`'s `subHugeNum`, both implemented by @Thimoteus (# by @JordanMartinez)
 
 Bugfixes:
 
 Other improvements:
+- Fix warnings revealed by v0.14.1 PS release (# by @JordanMartinez)
 
 ## [v5.0.0](https://github.com/purescript-contrib/purescript-precise/releases/tag/v5.0.0) - 2021-02-26
 
