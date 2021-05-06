@@ -13,6 +13,7 @@ Bugfixes:
 
 Other improvements:
 - Fix warnings revealed by v0.14.1 PS release, including the removal of `fromKRep` function (# by @JordanMartinez)
+- Install missing dependencies used in source code (#25 by @JordanMartinez)
 
 ## [v5.0.0](https://github.com/purescript-contrib/purescript-precise/releases/tag/v5.0.0) - 2021-02-26
 
